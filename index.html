@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="styles.css" />
+		<title>qt-module</title>
+	</head>
+	<body>
+		<div class="content">
+			<div class="qt-module">
+				<!-- editor -->
+				<div class="qt-module__editor qt-editor">
+					<!-- controls -->
+					<div class="qt-editor__controls editor-controls">
+						<button class="qt-btn task-modal__open">
+							<span>Задание</span>
+						</button>
+					</div>
+					<!-- content -->
+					<div class="qt-editor__content editor-content">
+						<!-- header -->
+						<div class="editor-content__header editor-header">
+							<button class="tab-trigger tab-trigger--html">index.html</button>
+							<button class="tab-trigger tab-trigger--css">style.css</button>
+						</div>
+						<!-- tabs -->
+						<div class="editor-content__tabs editor-tabs">
+							<!-- html -->
+							<div class="editor-tabs__tab editor-tab editor-tab--html scroll">
+								<textarea
+									id="codeAreaHtml"
+									class="editor-textarea editor-textarea--html ltd"
+									name="html"
+									cols="30"
+									rows="10"
+								>
+html</textarea
+								>
+							</div>
+							<div class="editor-tabs__tab editor-tab editor-tab--css scroll">
+								<textarea
+									id="codeAreaCss"
+									class="editor-textarea editor-textarea--css ltd"
+									name="css"
+									cols="30"
+									rows="10"
+								>
+css</textarea
+								>
+							</div>
+						</div>
+						<!-- footer -->
+						<div class="editor-content__footer editor-footer">
+							<button class="qt-btn qt-check">Проверить</button>
+							<a class="qt-result" href="/">Посмотреть результат...</a>
+						</div>
+					</div>
+				</div>
+				<!-- browser -->
+				<div class="qt-module__browser qt-browser">
+					<div class="qt-browser__inner">
+						<!-- content -->
+						<div class="qt-browser__content browser-content">
+							<!-- header -->
+							<div class="browser-content__header browser-header">
+								<span class="browser-title">title</span>
+							</div>
+							<!-- iframe -->
+							<div class="browser-content__iframe browser-iframe">
+								<iframe class="qt-iframe" name="qt-iframe"></iframe>
+							</div>
+							<!-- footer -->
+							<div class="browser-content__footer browser-footer">
+								<button class="qt-btn qt-prompt__open">
+									Показать подсказку
+								</button>
+								<button class="qt-btn qt-reset">&#x21bb;</button>
+							</div>
+						</div>
+						<!-- controls -->
+						<div class="qt-browser__controls browser-controls">
+							<div class="browser-controls__sizer browser-sizer">
+								<button class="browser-sizer__plus qt-btn">&plus;</button>
+								<p class="browser-sizer__text">
+									<span class="browser-sizer__value">100</span>%
+								</p>
+								<button class="browser-sizer__minus qt-btn">&minus;</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- modal -->
+				<div class="task-modal">
+					<div class="task-modal__overlay"></div>
+					<div class="task-modal__content">
+						<p class="task-modal__text"></p>
+						<button class="task-modal__close qt-btn">Перейти к заданию</button>
+						<button class="task-modal__icon">&times;</button>
+					</div>
+				</div>
+				<div class="confirm-modal">
+					<div class="confirm-modal__overlay">
+						<div class="confirm-modal__content">
+							<p class="confirm-modal__text">
+								Вы действительно хотите сбросить результат?
+							</p>
+							<div class="confirm-modal__btns">
+								<button class="confirm-modal__btn confirm-modal__btn--accept">
+									Да
+								</button>
+								<button class="confirm-modal__btn confirm-modal__btn--reject">
+									Нет
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="prompt-modal">
+					<div class="prompt-modal__content">
+						<div class="prompt-modal__btns">
+							<button
+								class="prompt-modal__btn prompt-modal__btn--before qt-btn"
+								type="button"
+							>
+								Образец
+							</button>
+							<button
+								class="prompt-modal__btn prompt-modal__btn--after qt-btn"
+								type="button"
+							>
+								Результат
+							</button>
+							<button
+								class="prompt-modal__btn prompt-modal__btn--quick qt-btn"
+								type="button"
+							>
+								Быстрое сравнение
+							</button>
+							<button
+								class="prompt-modal__btn prompt-modal__btn--close qt-btn"
+								type="button"
+							>
+								Скрыть подсказку
+							</button>
+						</div>
+
+						<div class="prompt-modal__compare">
+							<div class="prompt-modal__tab prompt-modal__tab--before">
+								<iframe
+									class="prompt-modal__frame prompt-modal__frame--before"
+								></iframe>
+							</div>
+							<div class="prompt-modal__tab prompt-modal__tab--after">
+								<iframe
+									class="prompt-modal__frame prompt-modal__frame--after"
+								></iframe>
+							</div>
+
+							<input
+								class="prompt-modal__input"
+								type="range"
+								step="1"
+								min="0"
+								max="100"
+								value="0"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="scripts.js"></script>
+	</body>
+</html>
